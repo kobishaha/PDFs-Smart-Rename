@@ -63,7 +63,7 @@ def rename_pdf(pdf_path, api_key):
     else:
         print("A file with the same name already exists, renaming not performed.")
 
-# 单个PDF文件路径
+# Ã¥ï¿½â€¢Ã¤Â¸ÂªPDFÃ¦â€“â€¡Ã¤Â»Â¶Ã¨Â·Â¯Ã¥Â¾â€ž
 pdf_file_path = "/Users/summer/Downloads/1.pdf"  # Please replace with your PDF file path
 your_api_key = "YOUR_API_KEY_HERE"  # Replace with your API key
 
