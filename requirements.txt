@@ -1,0 +1,8 @@
+PyMuPDF==1.23.8
+Pillow==10.2.0
+pytesseract==0.3.10
+requests==2.31.0
+tqdm==4.66.1
+python-dotenv==1.0.1
+dataclasses==0.6
+typing-extensions==4.9.0

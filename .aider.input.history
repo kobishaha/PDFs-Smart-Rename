@@ -1,0 +1,134 @@
+
+# 2024-12-03 13:22:03.361375
++/add pdf_smart_rename.py
++
+
+# 2024-12-03 13:22:06.884141
++Y
+
+# 2024-12-03 13:22:30.275736
++/model gpt-4p
+
+# 2024-12-03 13:22:34.615867
++/model gpt-4o
+
+# 2024-12-03 13:23:02.066822
++/add/drop pdf_smart_rename.py
++
+
+# 2024-12-03 13:23:21.753173
++/add pdf_smart_rename_singlefile.py
++/drop pdf_smart_rename_singlefile.py
++/add pdf_smart_rename.py
++
+
+# 2024-12-03 13:23:29.320232
++N
+
+# 2024-12-03 13:24:04.010196
++/settings
+
+# 2024-12-03 13:25:01.229195
++translate the comments to english
+
+# 2024-12-03 13:27:08.646053
++/chat-mode code
+
+# 2024-12-03 13:27:18.460918
++/map-refresh
+
+# 2024-12-03 13:27:23.199743
++/ls
+
+# 2024-12-03 13:28:11.194048
++/drop pdf_smart_rename_singlefile.py
++/add .gitignore
++
+
+# 2024-12-03 13:28:20.730406
++/map-refresh
+
+# 2024-12-03 13:28:24.222228
++/ls
+
+# 2024-12-03 13:29:24.315592
++/add .vs\PDFs-Smart-Rename\v17\DocumentLayout.backup.json
++/drop .vs\PDFs-Smart-Rename\v17\DocumentLayout.backup.json
++/add .vs\PDFs-Smart-Rename\v17\DocumentLayout.json
+
+# 2024-12-03 13:29:47.277065
++/drop .vs\PDFs-Smart-Rename\v17\DocumentLayout.json
++/add pdf_smart_rename_singlefile.py
++
+
+# 2024-12-03 13:29:55.880494
++N
+
+# 2024-12-03 13:30:08.336236
++/chat-mode code
+
+# 2024-12-03 13:30:36.235422
++/drop
+
+# 2024-12-03 13:30:45.225499
++/drop .gitignore
++/drop pdf_smart_rename_singlefile.py
++/add pdf_smart_rename_singlefile.py
++
+
+# 2024-12-03 13:30:53.736146
++/ls
+
+# 2024-12-03 13:31:54.426797
++translate the .py  comments to english
+
+# 2024-12-03 13:33:15.982564
++/add pdf_smart_rename.py
++/drop pdf_smart_rename.py
++/add README.md
++/drop
+
+# 2024-12-03 13:33:21.516006
++N
+
+# 2024-12-03 13:33:29.076485
++/drop
+
+# 2024-12-03 13:33:36.455191
++/add README.md
+
+# 2024-12-03 13:33:44.324907
++translate to english
+
+# 2024-12-03 13:35:47.336437
++generate a new readme.eng.md i english
+
+# 2024-12-03 13:37:07.927090
++make  readme.eng.md exactly like the nchinees version
+
+# 2024-12-03 13:38:09.948778
++N
+
+# 2024-12-03 13:40:28.623197
++/drop README.md
++/drop README.eng.md
++/drop pdf_smart_rename_singlefile.py
++
+
+# 2024-12-03 13:41:49.230135
++create a readme.heb.md andd translate with hebrew instaructionsd
++
+
+# 2024-12-03 13:44:09.994030
++set the default project bfiles to utf-8
+
+# 2024-12-03 13:45:47.674120
++/add LICENSE
++/drop LICENSE
++/add LICENSE
++/drop LICENSE
++/drop pdf_smart_rename_singlefile.py
++
+
+# 2024-12-03 13:45:51.523122
++N

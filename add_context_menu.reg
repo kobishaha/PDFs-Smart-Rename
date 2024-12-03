@@ -1,0 +1,8 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\.pdf\shell\SmartRename]
+@="Smart Rename with AI"
+"Icon"="%SystemRoot%\\System32\\shell32.dll,13"
+
+[HKEY_CLASSES_ROOT\.pdf\shell\SmartRename\command]
+@="\"C:\\Windows\\py.exe\" \"G:\\source\\PDFs-Smart-Rename\\pdf_context_menu.py\" \"%1\""

@@ -1,60 +1,143 @@
 # PDFs-Smart-Rename
-PDFSmartRename is a tool that automatically renames PDF files using OCR and AI technology. It extracts text from the first page of a PDF file, generates an appropriate file title using the Gemini API, and renames the PDF for easier identification and management.
+
+PDFSmartRename is a robust tool that automatically renames PDF files using OCR and AI technology. It extracts text from PDF files, generates appropriate titles using the Gemini API, and handles batch processing with advanced error handling and logging capabilities.
 
 ## Features
 
-- **Text Extraction**: Extracts text from the first page of a PDF file to determine the main content of the file.
-- **OCR Support**: If the extracted text is not clear or too little, OCR technology will be used to convert images to text.
-- **AI Title Generation**: Automatically generates file titles based on the extracted text content using Google's Gemini API.
-- **Batch Processing**: Supports traversing all PDF files in the specified directory and automatically renaming them.
+- **Smart Text Extraction**: 
+  - Extracts text from PDF files using PyMuPDF
+  - Falls back to OCR for scanned documents or images
+  - Configurable minimum text length threshold
 
-## Obtain Gemini API Key
+- **AI-Powered Title Generation**:
+  - Uses Google's Gemini API for intelligent title generation
+  - Supports research paper naming format (author-year-title)
+  - Customizable title templates
+  - Handles multiple languages
 
-- Open [https://makersuite.google.com/](https://makersuite.google.com/)
-- Log in with a Google account
-- Click `Get API Key` -> `Create API key in new project` to save the key
+- **Robust Processing**:
+  - Automatic retry mechanism for API and file operations
+  - Comprehensive error handling and logging
+  - Progress tracking for batch operations
+  - File backup functionality
 
-**Notes**
-
-- Currently, this service does not support Hong Kong IPs, [check supported regions](https://ai.google.dev/available_regions)
-- Due to IP (e.g., shared IPs) or frequency, it may be judged as abuse by Google Cloud, leading to the API Key or Google Cloud account being disabled. Please use it cautiously or use a secondary account.
-
-**Anti-Control Measures**
-- 2024-04-01 Updated anti-control measures, no longer accessed through the `google-generativeai` library, trying to access by setting the address yourself (using the default address of CF Worker)
+- **Advanced Configuration**:
+  - Customizable settings via configuration file
+  - Environment variable support
+  - Flexible logging options
+  - Backup management
 
 ## Installation
-This tool relies on several key Python libraries: `fitz` (PyMuPDF), `PIL`, `pytesseract`, and `google.generativeai`. You can install these dependencies with the following command:
-```
-pip install PyMuPDF Pillow pytesseract google-generativeai-sdk
-```
-Please note that `pytesseract` may also require you to install the Tesseract-OCR engine on your system.
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/yourusername/PDFs-Smart-Rename.git
+   cd PDFs-Smart-Rename
+   ```
+
+2. Install required dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Install Tesseract OCR:
+   - Windows: Download and install from [Tesseract GitHub](https://github.com/UB-Mannheim/tesseract/wiki)
+   - Linux: `sudo apt-get install tesseract-ocr`
+   - macOS: `brew install tesseract`
+
+## Configuration
+
+1. Create a `.env` file in the project root:
+   ```env
+   GEMINI_API_KEY=your_api_key_here
+   TESSERACT_CMD=path_to_tesseract_if_needed
+   LOG_LEVEL=INFO
+   ```
+
+2. Customize settings in `config.py`:
+   - API configuration
+   - OCR settings
+   - File processing options
+   - Logging preferences
+   - Retry parameters
+   - Title generation templates
 
 ## Usage
 
-1. Clone this repository locally.
-2. Ensure you have obtained the necessary API key and installed all dependencies.
-3. Modify the `directory_path` and `your_api_key` variables in the script to set your PDF file directory and API key, respectively.
-4. Run the script.
+### Basic Usage
 
-```
-python pdf_smart_rename.py
-```
+1. Set your PDF directory and API key in the configuration
+2. Run the script:
+   ```bash
+   python pdf_smart_rename.py
+   ```
+
+### Advanced Usage
+
+1. Configure custom title templates:
+   ```python
+   TITLE_TEMPLATE = "{authors}-{year}-{title}"
+   ```
+
+2. Enable backup functionality:
+   ```python
+   BACKUP_ENABLED = True
+   BACKUP_DIR = ".backup"
+   ```
+
+3. Adjust retry settings:
+   ```python
+   MAX_RETRIES = 3
+   RETRY_DELAY = 1
+   ```
+
+## Logging
+
+The tool provides comprehensive logging:
+- Console output for operation progress
+- Rotating file logs for debugging
+- Configurable log levels
+- Detailed error tracking
+
+Log files are stored in `pdf_rename.log` with automatic rotation.
+
+## Error Handling
+
+The tool includes robust error handling:
+- Automatic retries for API calls and file operations
+- Exponential backoff for failed attempts
+- Detailed error logging
+- Safe failure modes to prevent data loss
+
+## Backup System
+
+Automatic backup functionality:
+- Creates timestamped backups before renaming
+- Configurable backup directory
+- Option to enable/disable backups
+- Maintains file metadata
+
+## Notes
+
+- Currently, this service does not support Hong Kong IPs, [check supported regions](https://ai.google.dev/available_regions)
+- API usage may be subject to rate limiting
+- Consider using a secondary account for high-volume processing
+- Always backup important files before batch processing
+
+## Anti-Control Measures
+- 2024-04-01: Updated to use direct API access instead of the `google-generativeai` library
+- Configurable proxy support for restricted regions
 
 ## Precautions
-Before using PDF-Smart-Rename to rename files, it is strongly recommended to back up all PDF files to be processed.
+- Always backup important files before processing
+- Test with a small batch of files first
+- Monitor API usage to avoid rate limiting
+- Verify Tesseract OCR installation
 
-## Configuration
-If your Tesseract-OCR is not installed in the default path, you may need to specify the path for `pytesseract` in the script:
+## Contributing
 
-```python
-# Configure the path to Tesseract, if needed
-pytesseract.pytesseract.tesseract_cmd = r'<full_path_to_your_tesseract_executable>'
-```
-
-## Contribution
-
-Contributions and bug reports are welcome through Pull Requests or Issues.
+Contributions are welcome! Please feel free to submit pull requests or create issues for bugs and feature requests.
 
 ## License
 
-This project is licensed under the MIT License. For more information, please refer to the LICENSE file.
+This project is licensed under the MIT License. See the LICENSE file for details.
