@@ -22,7 +22,7 @@ def generate_title_with_gemini(pdf_text, api_key):
     """Generate a file title using the Gemini API based on PDF text content."""
     headers = {'Content-Type': 'application/json'}
     prompt = "Suggest a title for the following document content in its original language, if it's a research or science paper, just extract the relevant information and name it like: author&author-publishyear-originaltitle. show el.al for multiple authors:"
-    # 将提示和PDF文本内容结合
+    # Combine the prompt with the PDF text content
     full_text = prompt + "\n" + pdf_text
     data = {
         "contents": [{"parts": [{"text": full_text}]}]
