@@ -12,7 +12,7 @@ def extract_text_from_first_page(pdf_path):
     """
     Extract text from the first page of a PDF file.
     """
-    with fitz.open(pdf_path) as doc:
+    with fitz.open(pdf_path, filetype='pdf', encoding='utf-8') as doc:
         if len(doc) > 0:
             page = doc[0]  # Get the first page
             text = page.get_text()
