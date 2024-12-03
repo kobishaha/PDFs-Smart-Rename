@@ -73,6 +73,13 @@ def sanitize_filename(filename: str, max_length: int = None) -> str:
     # Replace multiple spaces/underscores with single underscore
     filename = '_'.join(filter(None, filename.split()))
     
+    # Handle Hebrew text direction
+    # Split into words and reverse only if the text contains Hebrew
+    if any('\u0590' <= c <= '\u05FF' for c in filename):
+        words = filename.split('_')
+        words.reverse()
+        filename = '_'.join(words)
+    
     # Truncate if necessary, ensuring we don't cut in the middle of a word
     if len(filename) > max_length:
         words = filename[:max_length].split('_')
@@ -128,4 +135,4 @@ def parse_title_template(template_str: str, **kwargs) -> str:
     except KeyError as e:
         log_warning(f"Missing template value: {e}")
         # Fall back to a simple concatenation of available values
-        return '-'.join(str(v) for v in kwargs.values() if v)
+        return '-'.join(str(v) for v in kwargs.valu

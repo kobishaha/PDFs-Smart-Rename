@@ -1,5 +1,5 @@
 import os
-import fitz  # PyMuPDF
+import fitz  # PyMuPDF 1.23.8
 import pytesseract
 import requests
 from PIL import Image
@@ -22,7 +22,7 @@ class PDFProcessor:
         """
         log_debug(f"Extracting text from {pdf_path}")
         
-        with fitz.open(pdf_path, filetype='pdf', encoding='utf-8') as doc:
+        with fitz.open(pdf_path) as doc:
             if len(doc) > 0:
                 page = doc[0]  # Get the first page
                 text = page.get_text()

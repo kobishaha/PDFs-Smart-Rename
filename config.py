@@ -8,11 +8,11 @@ class Config:
     GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY", "")
     
     # OCR Configuration
-    TESSERACT_CMD: Optional[str] = None
+    TESSERACT_CMD: Optional[str] = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
     MIN_TEXT_LENGTH: int = 50  # Minimum characters to consider valid text
     
     # File Processing
-    DEFAULT_INPUT_DIR: str = os.path.expanduser("~/Downloads")
+    DEFAULT_INPUT_DIR: str = "./test_pdfs"  # Use local test_pdfs directory
     BACKUP_ENABLED: bool = True
     BACKUP_DIR: str = ".backup"
     
