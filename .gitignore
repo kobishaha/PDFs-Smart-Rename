@@ -54,6 +54,7 @@ pdf_rename.log.*
 .Trashes
 ehthumbs.db
 Thumbs.db
+.aider*
 
 # Project specific
 test_pdfs/

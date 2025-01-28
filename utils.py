@@ -135,4 +135,4 @@ def parse_title_template(template_str: str, **kwargs) -> str:
     except KeyError as e:
         log_warning(f"Missing template value: {e}")
         # Fall back to a simple concatenation of available values
-        return '-'.join(str(v) for v in kwargs.valu
+        return '-'.join(str(v) for v in kwargs.values())

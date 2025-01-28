@@ -82,20 +82,4 @@ if len(sys.argv) != 3:
 
 pdf_path = sys.argv[1]
 api_key = sys.argv[2]
-rename_pdf(pdf_
-        return False
-        
-    os.rename(pdf_path, new_path)
-    print(f"Success: File renamed to: {new_path}")
-    return True
-
-# Simple command-line execution
-if len(sys.argv) < 3:
-    print("Usage: python pdf_smart_rename_singlefile.py <pdf_path> <api_key>")
-    sys.exit(1)
-
-pdf_path = sys.argv[1]
-api_key = sys.argv[2]
-rename_pdf(pdf_path, api_key)
-    
-    success = rename_pdf(pdf_file_path,
+rename_pdf(pdf_)
