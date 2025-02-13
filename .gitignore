@@ -1,4 +1,10 @@
 # Python
+*.aider/
+*.aider.*
+*.aider
+
+
+
 __pycache__/
 *.py[cod]
 *$py.class
